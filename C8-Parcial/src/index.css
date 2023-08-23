@@ -68,28 +68,72 @@ button:focus-visible {
   }
 }
 
-.formulario div{
+/************************************/
+.app{
+  padding: 20px;
+  background-color:#213547;
+  border-radius: 10px;
   margin: 10px;
+  max-width: 500px;
+  max-height: 800px;
+  min-height: 500px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.formulario {
+  margin: 20px 0px;
+}
+
+.formulario > div{
+  background-color: white;
+  padding: 10px 20px;
+  text-align: left;
+  overflow: hidden;
 }
 
 .formulario label{
   margin: 10px;
+  color:#1a1a1a;
+  font-weight: bold;
+}
+
+.formulario input {
+  background-color: transparent;
+  border-color: #1a1a1a;
+  width: 100%;
+  max-width: 300px;
+  color: #1a1a1a;
+}
+
+.formulario button{
+  width: 100%;
+  padding: 5px;
+  margin: 0px;
+  border-radius: 0px;
+}
+
+.app > div {
+  padding: 10px;
+}
+
+.containerCard, .containerCard > table {
+  width: 100%;
 }
 
 .containerCard thead td{
-  border: 1px white solid;
+  background-color: #5e014a9d;
   padding: 5px;
-  margin: 0px;
 }
 
 .card p {
-  margin: 10px;
-  padding: 5px 20px;
+  margin: 10px 20px;
   border: 1px solid gray;
 }
 
 .div-error{
-  border: 1px white solid;
+  background-color: rgb(189, 19, 19);
   padding: 0px;
   margin: 10px;
 }

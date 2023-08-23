@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-    <div className='App'>
+    <div className='app'>
       <h1>Mis juegos favoritos</h1>
       <Form onAgregarJuego={agregarJuego}></Form>
       <Card juegos={juegos}/>

@@ -1,0 +1,40 @@
+image: node:9.1.2
+stages:
+  - install
+  - test
+  - build
+  - deploy
+
+install-dependecies:
+  stage: install
+  script:
+    - npm install
+  artifacts:
+    expire_in: 10m
+    paths:
+      - node_modules/
+  cache:
+    paths:
+        - node_modules/
+
+test-apps:
+  stage: test
+  dependecies:
+    - install-dependecies
+  before_script:
+    - apt-get update && apt-get install -y apt-transport-https
+  script:
+    - npm run test
+
+build-apps:
+  stage: build
+  variables:
+    BUILD_CONFIGURATION: "produccion"
+  dependecies:
+    - install-dependecies
+  script:
+    - npm run build
+  artifacts:
+    expire_in: 10m
+    paths:
+      - build/

@@ -17,6 +17,7 @@ function Form({onAgregarJuego}){
             onAgregarJuego({nombre, tipo})
             setNombre("");
             setTipo("");
+            setMensaje("")
         }
     }
 

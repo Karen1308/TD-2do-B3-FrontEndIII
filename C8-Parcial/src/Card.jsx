@@ -10,8 +10,10 @@ function Card({juegos}){
                     <tbody>
                         {juegos.map((juego, index)=>(
                             <>
-                                <td key={index}> {juego.nombre} </td>
-                                <td> {juego.tipo} </td>
+                                <tr>
+                                    <td key={index}> {juego.nombre} </td>
+                                    <td> {juego.tipo} </td>
+                                </tr>
                             </>
                         ))}
                     </tbody>
