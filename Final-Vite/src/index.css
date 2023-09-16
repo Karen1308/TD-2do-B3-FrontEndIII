@@ -1,0 +1,352 @@
+:root {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+  font-weight: 400;
+
+  --bg-navbar: #ffffff;
+  --bg-button: #0f0f0f;
+  --bg-primary: #271233;
+  --bg-secondary: #806C9C;
+  --bg-footer: #0f0f0f;
+  --border-button: 1px solid #FFFFFFDE;
+  --border-color-button: #1A1A1A;
+  --border-focus-color-inputs: #A64D85;
+  --font-color-primary: #271233;
+  --font-color-secondary: #7E56A7;
+  --font-color-button: #ffffff;
+  --font-color-link-hover: #189AB4;
+  --font-color-title: #05445E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* linear-gradient(to right, #350d4c, #eb92f9);*/
+
+/**************************************************/
+/**************** ESTILOS GENERICOS ****************/
+h1 {
+  font-size: 3em;
+  line-height: 1.1;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+/* Botones */
+button {
+  background-color: var(--bg-button);
+  border-radius: 8px;
+  border: none;
+  color: var(--font-color-button);
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  padding: 0.6em 1.2em;
+  transition: ease-in-out 0.25s;
+}
+
+button:hover {
+  border-color: var(--border-button);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Links */
+a {
+  color: var(--font-color-primary);
+  font-weight: 500;
+  text-decoration: inherit;
+  padding: 10px;
+}
+
+a:hover {
+  color: var(--font-color-link-hover);
+}
+
+/* Barra de navegacion */
+nav {
+  align-items: center;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  padding: 10px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  box-shadow: 0px 7px 30px 0px rgba(40, 19, 53, 0.75);
+  overflow: hidden;
+}
+
+nav a img {
+  width: 1em;
+  margin: 0px 5px;
+}
+
+nav a {
+  display: flex;
+  justify-content: center;
+}
+
+nav a:hover {
+  transform: scale(1.1);
+  transition: ease-in-out 500ms;
+}
+
+/* Logo Odontologia */
+.logo {
+  width: 200px;
+  fill: var(--font-color-primary);
+}
+
+.fill2 {
+  fill: var(--bg-secondary);
+}
+
+.app {
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: auto;
+}
+
+/* Boton para cambiar de tema */
+#darkmode-label {
+  width: 80px;
+  height: 30px;
+  position: relative;
+  display: block;
+  background: #EBEBEB;
+  border-radius: 200px;
+  box-shadow: inset 0px 5px 5px rgb(0, 0, 0, 0.4), inset 0px -5px 5px rgb(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#darkmode-label:after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background: linear-gradient(180deg, #ffcc89, #d8860b);
+  border-radius: 180px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+#darkmode-toggle {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+#darkmode-toggle:checked+#darkmode-label {
+  background: var(--bg-primary);
+}
+
+#darkmode-toggle:checked+#darkmode-label:after {
+  left: 76px;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg, var(--bg-secondary), var(--bg-primary));
+}
+
+#darkmode-label:active:after {
+  width: 30px;
+}
+
+#darkmode-label svg {
+  position: absolute;
+  width: 20px;
+  top: 5px;
+  z-index: 100;
+}
+
+#darkmode-label svg.sun {
+  left: 5px;
+  fill: #ffffff;
+  transition: 0.3s;
+}
+
+#darkmode-label svg.moon {
+  left: 53px;
+  fill: #7E7E7E;
+  transition: 0.3s;
+}
+
+#darkmode-toggle:checked+#darkmode-label svg.sun {
+  fill: #7E7E7E;
+}
+
+#darkmode-toggle:checked+#darkmode-label svg.moon {
+  fill: #ffffff;
+}
+
+/* Mensajes */
+.mensaje {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 90px);
+}
+
+.mensaje p {
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: uppercase;
+}
+
+/* Pie de pagina */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-footer);
+  width: 100vw;
+}
+
+footer img {
+  max-width: 200px;
+  filter: invert(1);
+}
+
+/* Titulos */
+.title {
+  position: relative;
+  width: calc(100% - 500px);
+  text-align: center;
+  margin: auto;
+  padding: 5px;
+  padding-top: 15px;
+}
+
+.title h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--font-color-title);
+}
+
+/* Estilos para el formulario */
+.info {
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.formulario {
+  width: 450px;
+  margin: auto;
+}
+
+.formulario>div {
+  background-color: white;
+  text-align: left;
+  overflow: hidden;
+  padding: 5px 10px;
+}
+
+.formulario label {
+  width: 100%;
+  color: var(--font-color-primary);
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 0;
+}
+
+.formulario input,
+textarea {
+  background-color: transparent;
+  border-color: var(--border-color-button);
+  width: 100%;
+  min-width: 100px;
+  height: 100%;
+  color: var(--border-color-button);
+  line-height: 0;
+  transition: ease-in-out 5ms;
+  padding: 3px;
+  line-height: 1.5;
+  font-size: 12px;
+}
+
+.formulario div:first-child input {
+  text-transform: capitalize;
+}
+
+.formulario div:nth-child(3),
+.formulario>div:nth-child(3) textarea {
+  min-height: 100px !important;
+  height: 100%;
+}
+
+.formulario button {
+  margin: 10px 0px;
+  width: 100%;
+  padding: 5px;
+  border-radius: 0px;
+  max-width: 150px;
+}
+
+.formulario>div:last-child {
+  display: flex;
+  justify-content: end;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  border-color: var(--border-focus-color-inputs);
+  box-shadow: 0px 0px 15px 0px rgba(179, 178, 178, 0.9);
+  padding: 5px;
+  margin: 5px;
+}
+
+.div-error {
+  background-color: #a7565b !important;
+  padding: 0px !important;
+  margin: 10px;
+}
+
+.div-error p,
+.div-ok p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  padding: 5px;
+  margin: 0px;
+  font-weight: bold;
+  text-align: center;
+  transition: ease-in-out 1ms;
+  animation: bounce 0.5s 5 alternate;
+}
+
+.div-ok {
+  background-color: #56a765 !important;
+  padding: 0px !important;
+  margin: 10px;
+}
+
+@keyframes bounce {
+  from {
+    margin-top: -10px;
+  }
+
+  to {
+    margin-bottom: -60px;
+  }
+}

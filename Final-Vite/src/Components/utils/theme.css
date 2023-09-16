@@ -1,0 +1,63 @@
+/* MODO CLARO */
+nav.light {
+    background: var(--bg-navbar);
+}
+
+nav.light a{
+    color: var(--font-color-primary);
+}
+
+nav.light img{
+    filter: brightness(0) saturate(100%) invert(10%) sepia(11%) saturate(3973%) hue-rotate(238deg) brightness(92%) contrast(101%);
+}
+
+.app.light {
+    background-color: white;
+}
+
+.card.light .card-img img{
+    width: 100%;
+    margin: 10px;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+/* MODO OSCURO */
+nav.dark {
+    background: linear-gradient(to right, #350d4c, #eb92f9);
+}
+
+nav.dark a{
+    color: #271233;
+}
+
+nav.dark svg{
+    fill: var(--bg-navbar);
+}
+
+nav.dark img{
+    filter: brightness(0) saturate(100%) invert(75%) sepia(49%) saturate(2007%) hue-rotate(216deg) brightness(97%) contrast(100%);
+}
+
+.app.dark {
+    background-color: var(--bg-primary);
+    box-shadow: 0px 7px 30px 0px rgba(0, 0, 0, 0.75);
+}
+
+.app.dark .title h1{
+    color: var(--font-color-secondary);
+}
+
+.card.dark .content span{
+    background: linear-gradient(to right, var(--font-color-title) , var(--bg-secondary));
+}
+
+.card.dark .card-fav:hover svg,
+.card.dark .card-fav svg.active {
+    fill: var(--font-color-primary);
+}
+
+.formulario.dark > div,
+.info.dark {
+    background-color: #eb92f9;
+}

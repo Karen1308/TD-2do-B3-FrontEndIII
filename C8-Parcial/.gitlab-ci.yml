@@ -34,6 +34,7 @@ build-apps:
     - install-dependecies
   script:
     - npm run build
+    - docker build -t helloWorld
   artifacts:
     expire_in: 10m
     paths:
